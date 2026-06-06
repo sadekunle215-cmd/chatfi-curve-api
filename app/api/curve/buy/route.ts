@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
 
     // Build buy instruction data
     // discriminator for "buy" = first 8 bytes of sha256("global:buy")
-    const discriminator = Buffer.from([102, 6, 61, 18, 1, 218, 235, 234]);
+    const discriminator = Buffer.from([102, 6, 61, 18, 1, 218, 235, 234]); // already correct
     const solAmountBuf = Buffer.alloc(8);
     solAmountBuf.writeBigUInt64LE(BigInt(solAmount));
     const minTokensOut = Buffer.alloc(8);

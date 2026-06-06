@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
     );
 
     // discriminator for "sell"
-    const discriminator = Buffer.from([51, 230, 133, 164, 1, 127, 131, 173]);
+    const discriminator = Buffer.from([51, 230, 133, 164, 1, 127, 131, 173]); // already correct
     const tokenAmountBuf = Buffer.alloc(8);
     tokenAmountBuf.writeBigUInt64LE(BigInt(tokenAmount));
     const minSolOut = Buffer.alloc(8);
