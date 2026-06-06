@@ -5,7 +5,7 @@ import { getAssociatedTokenAddress, TOKEN_2022_PROGRAM_ID } from "@solana/spl-to
 const HELIUS_RPC = process.env.HELIUS_RPC_URL || "https://api.devnet.solana.com";
 const CURVE_PROGRAM_ID = new PublicKey("HRvfUT6rQV7ZpWs3Fenf1RWkRABU4bjPHhVeRckxabBG");
 const CURVE_SEED = Buffer.from("bonding_curve");
-const PLATFORM_TREASURY = new PublicKey("4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R");
+const PLATFORM_TREASURY = new PublicKey("7tsf2T6S9bPPVSwT4AqaWRTDuneeiy5362BgQnA3shcL");
 
 export async function POST(req: NextRequest) {
   try {
