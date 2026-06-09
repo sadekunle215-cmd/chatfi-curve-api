@@ -38,7 +38,9 @@ export async function GET(req: NextRequest) {
     });
   }
 
-  const res = await supabase(`/tokens?order=created_at.desc&limit=100`);
+  const creatorWallet = searchParams.get("creatorWallet");
+  const filter = creatorWallet ? `/tokens?creator_wallet=eq.${creatorWallet}&order=created_at.desc&limit=100` : `/tokens?order=created_at.desc&limit=100`;
+  const res = await supabase(filter);
   const data = await res.json();
   if (!Array.isArray(data)) return NextResponse.json([]);
   return NextResponse.json(data.map(t => ({
